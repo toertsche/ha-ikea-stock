@@ -4,10 +4,9 @@
 
 ## Installation (HACS)
 
-1. Repo auf GitHub veröffentlichen (`DEIN-USER` in `manifest.json` ersetzen).
-2. HACS → ⋮ → *Benutzerdefinierte Repositories* → Repo-URL, Kategorie *Integration*.
-3. Installieren, Home Assistant neu starten.
-4. *Einstellungen → Geräte & Dienste → Integration hinzufügen → IKEA Stock Watch*.
+1. HACS → ⋮ → *Benutzerdefinierte Repositories* → https://https://github.com/toertsche/ha-ikea-stock, Kategorie *Integration*.
+2. Installieren, Home Assistant neu starten.
+3. *Einstellungen → Geräte & Dienste → Integration hinzufügen → IKEA Stock Watch*.
 
 ## Einrichtung
 
