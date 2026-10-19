@@ -1,0 +1,71 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Watch an IKEA item",
+        "description": "Enter country and item number (8 digits, dots are ignored). Data source: easyrebuild.com.",
+        "data": {
+          "country": "Country",
+          "item_no": "Item number"
+        }
+      },
+      "stores": {
+        "title": "Stores and notification",
+        "description": "Item: {product}. Choose the stores to watch.",
+        "data": {
+          "stores": "Stores",
+          "scan_interval": "Check interval (minutes)",
+          "notify_entity": "Notification entity (optional)",
+          "persistent_notification": "Persistent HA notification"
+        },
+        "data_description": {
+          "scan_interval": "At least 10 minutes to be gentle on the data source.",
+          "notify_entity": "E.g. companion app or email (notify entity)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to easyrebuild.com.",
+      "no_stock_data": "No stock data found – check the item number or the page structure changed.",
+      "item_not_in_country": "This item number is not listed in the selected country (the site reports it as invalid). Choose another country or number.",
+      "country_mismatch": "The site returned data for a different country than selected.",
+      "invalid_item": "The item number must have 8 digits.",
+      "no_store_selected": "Select at least one store."
+    },
+    "abort": {
+      "already_configured": "This item is already configured for this country."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Settings",
+        "data": {
+          "stores": "Stores",
+          "scan_interval": "Check interval (minutes)",
+          "notify_entity": "Notification entity (optional)",
+          "persistent_notification": "Persistent HA notification"
+        },
+        "data_description": {
+          "scan_interval": "At least 10 minutes to be gentle on the data source.",
+          "notify_entity": "E.g. companion app or email (notify entity)."
+        }
+      }
+    },
+    "error": {
+      "no_store_selected": "Select at least one store."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "stock": {
+        "name": "{store} stock"
+      }
+    },
+    "binary_sensor": {
+      "available": {
+        "name": "{store} available"
+      }
+    }
+  }
+}

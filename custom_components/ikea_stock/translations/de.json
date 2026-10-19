@@ -1,0 +1,71 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "IKEA-Artikel überwachen",
+        "description": "Land und Artikelnummer eingeben (8 Ziffern, Punkte werden ignoriert). Datenquelle: easyrebuild.com.",
+        "data": {
+          "country": "Land",
+          "item_no": "Artikelnummer"
+        }
+      },
+      "stores": {
+        "title": "Märkte und Benachrichtigung",
+        "description": "Artikel: {product}. Wähle die Märkte, die überwacht werden sollen.",
+        "data": {
+          "stores": "Märkte",
+          "scan_interval": "Prüfintervall (Minuten)",
+          "notify_entity": "Benachrichtigungs-Entität (optional)",
+          "persistent_notification": "Persistente HA-Benachrichtigung"
+        },
+        "data_description": {
+          "scan_interval": "Mindestens 10 Minuten, um die Datenquelle zu schonen.",
+          "notify_entity": "z. B. Companion-App oder E-Mail (notify-Entität)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zu easyrebuild.com fehlgeschlagen.",
+      "no_stock_data": "Keine Bestandsdaten gefunden – Artikelnummer prüfen oder Seitenstruktur geändert.",
+      "item_not_in_country": "Diese Artikelnummer ist im gewählten Land nicht gelistet (die Seite meldet sie als ungültig). Anderes Land oder andere Nummer wählen.",
+      "country_mismatch": "Die Seite liefert für dieses Land keine passenden Daten (anderes Land zurückgegeben).",
+      "invalid_item": "Die Artikelnummer muss aus 8 Ziffern bestehen.",
+      "no_store_selected": "Mindestens einen Markt auswählen."
+    },
+    "abort": {
+      "already_configured": "Dieser Artikel ist für dieses Land bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Einstellungen",
+        "data": {
+          "stores": "Märkte",
+          "scan_interval": "Prüfintervall (Minuten)",
+          "notify_entity": "Benachrichtigungs-Entität (optional)",
+          "persistent_notification": "Persistente HA-Benachrichtigung"
+        },
+        "data_description": {
+          "scan_interval": "Mindestens 10 Minuten, um die Datenquelle zu schonen.",
+          "notify_entity": "z. B. Companion-App oder E-Mail (notify-Entität)."
+        }
+      }
+    },
+    "error": {
+      "no_store_selected": "Mindestens einen Markt auswählen."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "stock": {
+        "name": "{store} Bestand"
+      }
+    },
+    "binary_sensor": {
+      "available": {
+        "name": "{store} verfügbar"
+      }
+    }
+  }
+}

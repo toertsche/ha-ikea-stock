@@ -1,0 +1,12 @@
+{
+  "domain": "ikea_stock",
+  "name": "IKEA Stock Watch",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/DEIN-USER/ha-ikea-stock",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DEIN-USER/ha-ikea-stock/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
